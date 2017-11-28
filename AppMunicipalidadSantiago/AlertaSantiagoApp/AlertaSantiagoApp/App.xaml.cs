@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlertaSantiagoApp.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,20 @@ namespace AlertaSantiagoApp
 {
     public partial class App : Application
     {
+        #region Properties
+        public static NavigationPage Navigator { get; internal set; }
+        public static MasterPage Master { get; internal set; }
+
+        //public static User CurrentUser { get; internal set; }
+        #endregion
+
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new AlertaSantiagoApp.MainPage();
+            MainPage = new MasterPage();
         }
-
         protected override void OnStart()
         {
             // Handle when your app starts
