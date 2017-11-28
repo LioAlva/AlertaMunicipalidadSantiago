@@ -11,7 +11,7 @@
 
     <StackLayout Padding="8">
         <StackLayout Orientation="Horizontal">
-            <Label Text="Transportista"
+            <Label Text="Alerta Santiago"
                TextColor="{StaticResource AccentColor1}"
                FontSize="24" 
                FontAttributes="Bold"
