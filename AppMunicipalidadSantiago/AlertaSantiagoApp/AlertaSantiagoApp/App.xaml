@@ -23,7 +23,7 @@
             <Color x:Key="LoginTextColor">#FEFEFE</Color>
             <Color x:Key="TextColor">#FFDA50</Color>
             <Color x:Key="TextColor2">#3B3F42</Color>
-            <Color x:Key="BackgroundColor2">#FBBA42</Color> 51651E
+            <Color x:Key="BackgroundColor2">#FFDA50</Color> 51651E
             <Color x:Key="VerduscoColor">#51651E</Color> 
             <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>

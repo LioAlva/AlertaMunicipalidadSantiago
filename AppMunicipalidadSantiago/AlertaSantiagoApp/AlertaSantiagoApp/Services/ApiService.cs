@@ -21,6 +21,8 @@ namespace AlertaSantiagoApp.Services
         {
             try
             {
+           
+
                 var client = new HttpClient();
 
                 var url = "http://tdmdigitalqa.azurewebsites.net/Service1.svc/accesoLoginCliente?param1=" + email + "&param2=" + password + "&param3=1";
@@ -30,13 +32,20 @@ namespace AlertaSantiagoApp.Services
                 {
                     return null;
                 }
+
+                var loginRequest = new User
+                {
+                    Email = email,
+                    Password = password,
+                };
+
                 var result = await response.Content.ReadAsStringAsync();
                 var respuestaLogin = JsonConvert.DeserializeObject<ResponseLogin>(result);
                 return new Response
                 {
                     IsSuccess = respuestaLogin.status.Equals("OK") ? true : false,
                     Message = respuestaLogin.message,
-                    Result = respuestaLogin.data
+                    Result = loginRequest
                 };
             }
             catch (Exception ex)

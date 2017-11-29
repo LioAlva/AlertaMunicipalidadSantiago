@@ -15,7 +15,6 @@
     Spacing="5">
             <StackLayout Orientation="Horizontal"
                       HorizontalOptions="Center">
-
                 <Image Source="MunSantiagoCusco.png"
                WidthRequest="180"
                HeightRequest="180"
@@ -48,11 +47,13 @@
                         <TapGestureRecognizer Command="{Binding RegisteredCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-
+                <ActivityIndicator 
+                HorizontalOptions="End"
+                IsEnabled="True"
+                IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
             </StackLayout>
-            <ActivityIndicator IsEnabled="False"
-      IsRunning="{Binding IsRunning, Mode=TwoWay}">
-            </ActivityIndicator>
+
             <StackLayout 
       Orientation="Horizontal"
       HorizontalOptions="Center">
@@ -75,6 +76,5 @@
       VerticalOptions="Center">
             </Label>
         </StackLayout>
-
     </ScrollView>
 </ContentPage>
