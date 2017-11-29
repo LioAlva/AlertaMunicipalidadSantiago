@@ -2,12 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlertaSantiagoApp.Pages.MenuPage"
-              BackgroundColor="{StaticResource MenuColor}"
+             BackgroundColor="{StaticResource MenuColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="menu"
-             >
-
-
+             Title="menu">
 
     <StackLayout Padding="8">
         <StackLayout Orientation="Horizontal">

@@ -12,11 +12,19 @@
             <Color x:Key="FontColor">#52656b</Color>
             <Color x:Key="AccentColor1">#cdff00</Color>
             <Color x:Key="AccentColor2">#b8b89f</Color>
-            <Color x:Key="BackgroundColor">#ffffff</Color>
+            <Color x:Key="BackgroundColor">#f5edc2</Color>
             <!-- Menu colors -->
             <Color x:Key="MenuColor">#52656b</Color>
             <Color x:Key="MenuFontColor">#ffffff</Color>
+            <Color x:Key="BaseColorText">#E0E0E0</Color>
 
+
+            <!--Generales Colors Proyect-->
+            <Color x:Key="LoginTextColor">#FEFEFE</Color>
+            <Color x:Key="TextColor">#FFDA50</Color>
+            <Color x:Key="TextColor2">#3B3F42</Color>
+            <Color x:Key="BackgroundColor2">#FBBA42</Color> 51651E
+            <Color x:Key="VerduscoColor">#51651E</Color> 
             <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
 

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlertaSantiagoApp.Pages.SignInPage"
+             BackgroundColor="{StaticResource  BackgroundColor2}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              >
+    <ScrollView>
+        <StackLayout Padding="10" >
+            <StackLayout Spacing="10">
+                <BoxView></BoxView>
+                <Label Text="¡Registrarse!" 
+             FontSize="25" 
+             TextColor="{StaticResource TextColor2}"
+             FontAttributes="Bold"
+             HorizontalOptions="Center"
+             VerticalOptions="End"/>
+   
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Complete sus datos por favor"
+                     FontSize="15" 
+                     TextColor="{StaticResource TextColor2}"
+                     FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+                    <Image Source="MunSantiagoCusco.png"
+                       WidthRequest="45"
+                       HeightRequest="45"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"></Image>
+                </StackLayout>
+
+                <StackLayout Padding="20" Spacing="1">
+
+                    <Label Text="Nombre: "
+                TextColor="{StaticResource TextColor2}"
+                FontSize="15"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center"/>
+                    <Entry 
+                BackgroundColor="{StaticResource BaseColorText}"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"/>
+                    <Label Text="Apellido Paterno: "     
+                              FontSize="15"
+                           TextColor="{StaticResource TextColor2}"
+             HorizontalOptions="Start"
+             VerticalOptions="Center"/>
+                    <Entry 
+                  BackgroundColor="{StaticResource BaseColorText}"
+             TextColor="{StaticResource TextColor2}"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"/>
+                    <Label Text="Apellido Materno: "
+                 TextColor="{StaticResource TextColor2}"
+                    FontSize="15"
+             HorizontalOptions="Start"
+             VerticalOptions="Center"/>
+                    <Entry 
+                  BackgroundColor="{StaticResource BaseColorText}"
+                    TextColor="{StaticResource TextColor2}"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"/>
+                    <Label Text="DNI: "     
+            TextColor="{StaticResource TextColor2}"
+            FontSize="15"
+             HorizontalOptions="Start"
+             VerticalOptions="Center"/>
+                    <Entry 
+                  BackgroundColor="{StaticResource BaseColorText}"
+             TextColor="{StaticResource TextColor2}"
+                FontSize="15"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"/>
+
+
+                    <Label Text="Correo: "     
+            TextColor="{StaticResource TextColor2}"
+             HorizontalOptions="Start"
+            FontSize="15"
+             VerticalOptions="Center"/>
+                    <Entry 
+                  BackgroundColor="{StaticResource BaseColorText}"
+             TextColor="{StaticResource TextColor2}"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"/>
+
+                        <Button  
+                         Text="Registrate"
+                           HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center">
+                            
+                        </Button>
+                    
+                </StackLayout>
+              
+            </StackLayout>
+
+           
+            
+    </StackLayout>
+    </ScrollView>
+
+</ContentPage>

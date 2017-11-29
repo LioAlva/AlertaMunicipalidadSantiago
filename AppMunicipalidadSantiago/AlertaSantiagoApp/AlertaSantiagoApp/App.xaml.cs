@@ -22,7 +22,7 @@ namespace AlertaSantiagoApp
         {
             InitializeComponent();
 
-            MainPage = new MasterPage();
+            MainPage = new LoginPage();
         }
         protected override void OnStart()
         {

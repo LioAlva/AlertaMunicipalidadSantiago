@@ -2240,7 +2240,10 @@ namespace AlertaSantiagoApp.Droid
 			public const int mr_ic_play_light = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int notification_template_icon_bg = 2130837678;
+			public const int MunSantiagoCusco = 2130837678;
+			
+			// aapt resource value: 0x7f0200af
+			public const int notification_template_icon_bg = 2130837679;
 			
 			static Drawable()
 			{
