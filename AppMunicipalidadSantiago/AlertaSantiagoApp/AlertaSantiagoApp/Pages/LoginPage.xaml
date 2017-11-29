@@ -1,10 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AlertaSantiagoApp.Pages.LoginPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+             x:Class="AlertaSantiagoApp.Pages.LoginPage"
+               xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             Title="Login"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             >
+
+    <StackLayout
+    BindingContext="{Binding NewLogin}"
+    Padding="10" 
+    Spacing="20">
+        <StackLayout Orientation="Horizontal"
+                      HorizontalOptions="Center">
+            <Label
+        Text="TDM Digital"
+        FontSize="12"
+        FontAttributes="Bold"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+            </Label>
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout 
+      Orientation="Horizontal" 
+      HorizontalOptions="Center">
+            <Label
+        Text="TDM GRUPO"
+        TextColor="{StaticResource MainColor}"
+        FontSize="24"
+        FontAttributes="Bold"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+            </Label>
+
+            <controls:CircleImage 
+                Source="icon.png" 
+                BackgroundColor="Blue"
+                  Aspect="AspectFill"
+                  WidthRequest="50"
+                  HeightRequest="50"
+                BorderColor="SeaGreen">
+            </controls:CircleImage>
+
+
+        </StackLayout>
+        <BoxView
+      HeightRequest="3"
+      Color="{StaticResource MainColor}">
+        </BoxView>
+        <Entry
+      Text="{Binding User, Mode=TwoWay}"
+      Keyboard="Email"
+      Placeholder="Usuario"
+      TextColor="{StaticResource MainColor}">
+        </Entry>
+        <Entry
+      Text="{Binding Password, Mode=TwoWay}"
+      Placeholder="Contraseña"
+      IsPassword="True"
+      TextColor="{StaticResource MainColor}">
+        </Entry>
+        <Button
+      Command="{Binding LoginCommand}"
+      Text="Ingresar"
+      TextColor="{StaticResource AccentColor1}"
+      HorizontalOptions="Center"
+      VerticalOptions="Center">
+        </Button>
+        <!--<ActivityIndicator
+      IsRunning="{Binding IsRunning, Mode=TwoWay}">
+        </ActivityIndicator>-->
+        <StackLayout 
+      Orientation="Horizontal"
+      HorizontalOptions="Center">
+            <Label
+        Text="Recuerdame"
+        TextColor="{StaticResource MainColor}"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+            </Label>
+            <Switch
+        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+            </Switch>
+        </StackLayout>
+        <Label
+      Text="¿Has olvidado tu contraseña?"
+      TextColor="{StaticResource AccentColor2}"
+      HorizontalOptions="Center"
+      VerticalOptions="Center">
+        </Label>
+    </StackLayout>
+
 </ContentPage>
