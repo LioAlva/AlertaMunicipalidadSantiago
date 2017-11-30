@@ -20,7 +20,8 @@ namespace AlertaSantiagoApp
         #region Properties
         public static NavigationPage Navigator { get; internal set; }
         public static MasterPage Master { get; internal set; }
-        public static User CurrentUser { get; }
+        public static User CurrentUser { get; internal set; }
+
 
         //public static User CurrentUser { get; internal set; }
         #endregion
@@ -36,6 +37,9 @@ namespace AlertaSantiagoApp
 
                 var mainViewModel = MainViewModel.GetInstance();
                 mainViewModel.LoadUser(user);
+
+                App.CurrentUser = user;
+                MainPage = new MasterPage();
             }
             else {
                 MainPage = new LoginPage();

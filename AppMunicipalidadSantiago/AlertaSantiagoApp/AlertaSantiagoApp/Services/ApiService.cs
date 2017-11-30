@@ -37,10 +37,12 @@ namespace AlertaSantiagoApp.Services
                 {
                     UserName = email,
                     Password = password,
+                    UserId = 1//Luego borrar
                 };
 
                 var result = await response.Content.ReadAsStringAsync();
                 var respuestaLogin = JsonConvert.DeserializeObject<ResponseLogin>(result);
+               
                 return new Response
                 {
                     IsSuccess = respuestaLogin.status.Equals("OK") ? true : false,

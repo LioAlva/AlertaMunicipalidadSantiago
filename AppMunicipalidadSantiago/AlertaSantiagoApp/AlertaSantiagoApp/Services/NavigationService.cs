@@ -9,6 +9,16 @@ namespace AlertaSantiagoApp.Services
 {
     public class NavigationService
     {
+        #region Attributes
+        private DataService dataService;
+        #endregion
+
+        #region Constructor
+        public NavigationService()
+        {
+            dataService = new DataService();
+        }
+        #endregion
 
         public async Task Navigate(string pageName)
         {
@@ -37,8 +47,8 @@ namespace AlertaSantiagoApp.Services
 
         private void Logout()
         {
-            //App.CurrentUser.IsRemembered = false; //lo dejamos de recordar por que hicimos un logut ,ahora creamos un servicio que nos ayudaraupdetear uduarios
-            //dataService.UpdateUser(App.CurrentUser);
+            App.CurrentUser.IsRemembered = false; //lo dejamos de recordar por que hicimos un logut ,ahora creamos un servicio que nos ayudaraupdetear uduarios
+            dataService.UpdateUser(App.CurrentUser);
             App.Current.MainPage = new LoginPage();
         }
 

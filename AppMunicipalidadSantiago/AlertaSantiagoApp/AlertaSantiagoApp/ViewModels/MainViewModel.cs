@@ -104,6 +104,8 @@ namespace AlertaSantiagoApp.ViewModels
 
         #endregion
 
+        
+
 
     }
 }

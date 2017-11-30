@@ -10,33 +10,32 @@ namespace AlertaSantiagoApp.Services
 {
     public class DataService
     {
+        public Response UpdateUser(User user)
+        {
+            try
+            {
+                using (var da = new DataAccess())
+                {
+                    da.Update(user);
+                }
 
-        //public Response UpdateUser(User user)
-        //{
-        //    try
-        //    {
-        //        using (var da = new DataAccess())
-        //        {
-        //            da.Update(user);
-        //        }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Usuario Actualizado Ok",
+                    Result = user,
+                };
+            }
+            catch (Exception ex)
+            {
 
-        //        return new Response
-        //        {
-        //            IsSuccess = true,
-        //            Message = "Usuario Actualizado Ok",
-        //            Result = user,
-        //        };
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        return new Response
-        //        {
-        //            IsSuccess = false,
-        //            Message = ex.Message,
-        //        };
-        //    }
-        //}
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
 
         public User GetUser()
         {
