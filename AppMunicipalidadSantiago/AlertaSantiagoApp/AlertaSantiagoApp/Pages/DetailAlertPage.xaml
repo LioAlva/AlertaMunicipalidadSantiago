@@ -1,25 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AlertaSantiagoApp.Pages.DetailAlertPage">
-
-
-
+             x:Class="AlertaSantiagoApp.Pages.DetailAlertPage"
+                BackgroundColor="{StaticResource  WhiteColor}"
+             >
 
     <ScrollView
-    BindingContext="{Binding CurrentCustomer}">
+    BindingContext="{Binding DetailAlert}">
         <StackLayout
-      Padding="8">
+      Padding="10" spacing="10">
+
+            <StackLayout Padding="17" HorizontalOptions="CenterAndExpand">
+                <Label Text="Municipalidad de Santiago"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="EndAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                      TextColor="{StaticResource VerduscoColor}"
+               FontSize="25"></Label>
+                <Label Text="Nos Comunicamos contigo"
+               VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                              TextColor="{StaticResource VerduscoColor}"
+               FontSize="15"></Label>
+            </StackLayout>
+
+            <!--Esto es par el mapa-->
+
             <StackLayout
         Orientation="Horizontal">
-                <controls:CircleImage
-          Source="{Binding PhotoFullPath}"
-          Aspect="AspectFill"
-          WidthRequest="100"
-          HeightRequest="100"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </controls:CircleImage>
                 <Label
           Text="{Binding FullName}"
           TextColor="{StaticResource FontColor}"
@@ -114,15 +123,7 @@
           HorizontalOptions="Start">
                 </Label>
                 <!--USAMOS UN BINDABLE PIKER PORQ NECEITO USAR POR LO QUE QUEIRO DEL PROYECTO-->
-                <control:BindablePicker
-          Title="Seleccione un departamento"
-          DisplayMemberPath="Name"
-          SelectedValuePath="DepartmentId"
-          ItemsSource="{Binding Departments}"
-          SelectedValue ="{Binding Path=DepartmentId, Mode=TwoWay}"
-          HorizontalOptions="FillAndExpand"
-          VerticalOptions="Center">
-                </control:BindablePicker>
+               
             </StackLayout>
             <StackLayout
         Orientation="Horizontal">
@@ -132,15 +133,7 @@
           VerticalOptions="Center"
           HorizontalOptions="Start">
                 </Label>
-                <control:BindablePicker
-          Title="Seleccione una ciudad"
-          DisplayMemberPath="Name"
-          SelectedValuePath="CityId"
-          ItemsSource="{Binding Cities}"
-          SelectedValue ="{Binding Path=CityId, Mode=TwoWay}"
-          HorizontalOptions="FillAndExpand"
-          VerticalOptions="Center">
-                </control:BindablePicker>
+      
             </StackLayout>
             <StackLayout
         Orientation="Horizontal">
@@ -171,39 +164,8 @@
           HorizontalOptions="FillAndExpand">
                 </Entry>
             </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Button
-          Text="Localización"
-          TextColor="{StaticResource BackgroundColor}"
-          BackgroundColor="{StaticResource MainColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Button>
-                <Button
-          Text="Actualizar"
-          TextColor="{StaticResource BackgroundColor}"
-          BackgroundColor="{StaticResource OrangeColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Button>
-                <Button
-          Command="{Binding DeleteCustomerCommand}"
-          Text="Borrar"
-          TextColor="{StaticResource BackgroundColor}"
-          BackgroundColor="{StaticResource RedColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Button>
-            </StackLayout>
-            <!--Esto es par el mapa-->
-            <maps:Map 
-                WidthRequest="320" 
-                HeightRequest="400"
-                x:Name="MyMap"
-                IsShowingUser="true"
-                MapType="Hybrid">
-            </maps:Map>
+          
+      
 
         </StackLayout>
     </ScrollView>

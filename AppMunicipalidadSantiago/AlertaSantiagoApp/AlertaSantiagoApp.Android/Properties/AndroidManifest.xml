@@ -17,6 +17,11 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  
-  
+
+
+  <application android:label="MapsConcept.Droid">
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAtxvXVhbzV9OTwZh8UxVsW2A58WYf-Btc" />
+  </application>
+
+
 </manifest>
