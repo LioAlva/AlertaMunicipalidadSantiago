@@ -48,7 +48,8 @@
                     </Label.GestureRecognizers>
                 </Label>
                 <ActivityIndicator 
-                HorizontalOptions="End"
+                HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
                 IsEnabled="True"
                 IsRunning="{Binding IsRunning, Mode=TwoWay}">
                 </ActivityIndicator>

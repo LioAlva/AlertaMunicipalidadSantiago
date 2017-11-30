@@ -66,6 +66,13 @@ namespace AlertaSantiagoApp.ViewModels
 
 
         #region Commands
+        public ICommand RegisteredCommand { get { return new RelayCommand(Registered); } }
+
+        private async void Registered()
+        {
+           await  navigationService.NavigateRegistered("SigInPage");
+        }
+
         public ICommand LoginCommand { get { return new RelayCommand(Login); } }
 
         private async void Login()

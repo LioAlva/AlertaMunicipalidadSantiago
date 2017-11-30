@@ -19,6 +19,12 @@ namespace AlertaSantiagoApp.Services
             dataService = new DataService();
         }
         #endregion
+        public async Task NavigateRegistered(string pageName)
+        {
+           await App.Navigator.PushAsync(new SignInPage());  
+        }
+
+
 
         public async Task Navigate(string pageName)
         {

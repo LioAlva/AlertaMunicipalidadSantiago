@@ -18,7 +18,7 @@ namespace AlertaSantiagoApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            ButtonCircle.FormsPlugin.Droid.ButtonCircleRenderer.Init();//Button circle
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

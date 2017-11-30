@@ -12,6 +12,7 @@ namespace AlertaSantiagoApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        public int MyProperty { get; set; }
         public LoginPage()
         {
             InitializeComponent();
