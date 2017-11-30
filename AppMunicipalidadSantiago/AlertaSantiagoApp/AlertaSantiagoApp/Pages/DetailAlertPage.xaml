@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlertaSantiagoApp.Pages.DetailAlertPage"
-                BackgroundColor="{StaticResource  WhiteColor}"
+             BackgroundColor="{StaticResource  WhiteColor}"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              >
 
     <ScrollView
     BindingContext="{Binding DetailAlert}">
         <StackLayout
-      Padding="10" spacing="10">
-
+      Padding="10" Spacing="10">
             <StackLayout Padding="17" HorizontalOptions="CenterAndExpand">
                 <Label Text="Municipalidad de Santiago"
                    VerticalTextAlignment="Center"
@@ -25,10 +26,45 @@
                FontSize="15"></Label>
             </StackLayout>
 
-            <!--Esto es par el mapa-->
-
+          <!--Esto es par el mapa-->
             <StackLayout
         Orientation="Horizontal">
+                <Label
+          Text="Latidud:"
+          TextColor="{StaticResource FontColor}"
+          VerticalOptions="Center"
+          HorizontalOptions="Start">
+                </Label>
+                <Entry
+          Placeholder="Latitud"
+          IsEnabled="false"
+          Text="{Binding Latitude, Mode=TwoWay}"
+          VerticalOptions="Center"
+          HorizontalOptions="FillAndExpand">
+                </Entry>
+                <Label
+          Text="Longitud:"
+          TextColor="{StaticResource FontColor}"
+          VerticalOptions="Center"
+          HorizontalOptions="Start">
+                </Label>
+                <Entry
+          Placeholder="Longitud"
+          IsEnabled="false"
+          Text="{Binding Longitude, Mode=TwoWay}"
+          VerticalOptions="Center"
+          HorizontalOptions="FillAndExpand">
+                </Entry>
+                <maps:Map 
+                  WidthRequest="320" 
+                  HeightRequest="200"
+                  x:Name="MyMap"
+                  IsShowingUser="true"
+                  MapType="Hybrid">
+                </maps:Map>
+            </StackLayout>
+            <StackLayout
+        Orientation="Horizontal" >
                 <Label
           Text="{Binding FullName}"
           TextColor="{StaticResource FontColor}"
@@ -134,35 +170,6 @@
           HorizontalOptions="Start">
                 </Label>
       
-            </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Latidud:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Latitud"
-          IsEnabled="false"
-          Text="{Binding Latitude, Mode=TwoWay}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
-                <Label
-          Text="Longitud:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Longitud"
-          IsEnabled="false"
-          Text="{Binding Longitude, Mode=TwoWay}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
             </StackLayout>
           
       

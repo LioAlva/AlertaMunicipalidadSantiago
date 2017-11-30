@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Forms.Maps;
 
 namespace AlertaSantiagoApp.ViewModels
 {
@@ -21,9 +22,12 @@ namespace AlertaSantiagoApp.ViewModels
         #region Properties
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
 
+        public CustomerItemViewModel CurrentCustomer { get; set; }
         public LoginViewModel NewLogin { get; set; }
 
         public UserViewModel UserLoged { get; set; }
+
+        public ObservableCollection<Pin> Pins { get; set; }
 
         //RegisteredCommand
         //public  NewLogin 
@@ -54,6 +58,7 @@ namespace AlertaSantiagoApp.ViewModels
             UserLoged = new UserViewModel();
             dialogService = new DialogService();
             navigationService = new NavigationService();
+            Pins = new ObservableCollection<Pin>();
             LoadMenu();
             //Create Views
             NewLogin = new LoginViewModel();
@@ -72,13 +77,24 @@ namespace AlertaSantiagoApp.ViewModels
             }
         }
 
-    
+
 
         #endregion
 
         #region Methods
 
-
+        public void SetGeolocation( string address, double latitude, double longitude)
+        {
+            var position = new Position(latitude, longitude);
+            var pin = new Pin
+            {
+                Type = PinType.Place,
+                Position = position,
+           //     Label = name,
+                Address = address
+            };
+            Pins.Add(pin);
+        }
         public void LoadUser(User user)
         {
            // var user = dataService.GetUser();  //aca muere

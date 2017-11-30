@@ -25,7 +25,7 @@ namespace AlertaSantiagoApp.iOS
             ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            Xamarin.FormsMaps.Init();//mapa
             return base.FinishedLaunching(app, options);
         }
     }
