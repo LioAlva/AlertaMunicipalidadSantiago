@@ -43,6 +43,9 @@ namespace AlertaSantiagoApp.Services
                 case "GuidePage":
                     await App.Navigator.PushAsync(new GuidePage());
                     ; break;
+                case "DetailAlertPage":
+                    await App.Navigator.PushAsync(new DetailAlertPage());
+                    ; break;
                 case "LogutPage":
                     Logout();
                     ; break;

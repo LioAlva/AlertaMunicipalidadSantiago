@@ -49,6 +49,9 @@
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\ResponseLogin.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\DetailAlertPage.xaml.cs">
+      <DependentUpon>DetailAlertPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SignInPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\DetailAlertPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

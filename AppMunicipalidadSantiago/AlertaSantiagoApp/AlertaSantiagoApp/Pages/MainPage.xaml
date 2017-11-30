@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlertaSantiagoApp.Pages.MainPage"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"  
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              >
 
     <ScrollView Padding="15">
@@ -26,9 +27,11 @@
             VerticalOptions="CenterAndExpand">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" AutomationId="*"
                          >
-                    <circularButton:CircleButton Text="Alerta"   TextColor="{StaticResource WhiteColor}"  FontSize="30" HeightRequest="220" 
-                          BorderRadius="220" WidthRequest="220" 
-                          BorderThickness="5" BorderColor="Yellow" BackgroundColor="{StaticResource RedColor}" 
+                    <circularButton:CircleButton Text="Alerta" 
+                        Command="{Binding AlertCommand}"              
+                        TextColor="{StaticResource WhiteColor}"  FontSize="30" HeightRequest="220" 
+                        BorderRadius="220" WidthRequest="220" 
+                        BorderThickness="5" BorderColor="Yellow" BackgroundColor="{StaticResource RedColor}" 
                       />
 
                 </StackLayout>

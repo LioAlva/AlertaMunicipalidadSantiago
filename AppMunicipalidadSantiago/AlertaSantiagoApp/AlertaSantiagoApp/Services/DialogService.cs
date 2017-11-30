@@ -12,5 +12,10 @@ namespace AlertaSantiagoApp.Services
         {
             await App.Current.MainPage.DisplayAlert(title, message, "Aceptar");
         }
+        public async Task<bool> ShowMessageOnYesNo()
+        {
+            var response= await App.Current.MainPage.DisplayAlert("Confirmación","¿Está seguro que quieres enviar la Alerta?", "Si", "No");
+            return response;
+        }
     }
 }
