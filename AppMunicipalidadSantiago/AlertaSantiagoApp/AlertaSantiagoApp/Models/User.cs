@@ -10,7 +10,6 @@ namespace AlertaSantiagoApp.Models
     {
         //[PrimaryKey]
         public int UserId { get; set; }
-        public string Email{ get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -51,6 +50,7 @@ namespace AlertaSantiagoApp.Models
         public string FullName { get { return string.Format("{0} {1}", FirstName, LastName); } }
         //creamos para foto 112
         //public string PhotoFullPath { get { return string.Format("http://zulu-software.com/ECommerce{0}", Photo.Substring(1)); } }
+        public string PhotoFullPath { get; set; }
 
         public override int GetHashCode()
         {

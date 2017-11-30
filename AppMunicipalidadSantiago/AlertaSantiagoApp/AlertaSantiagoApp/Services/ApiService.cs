@@ -35,7 +35,7 @@ namespace AlertaSantiagoApp.Services
 
                 var loginRequest = new User
                 {
-                    Email = email,
+                    UserName = email,
                     Password = password,
                 };
 

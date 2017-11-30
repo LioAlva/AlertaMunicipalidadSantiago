@@ -40,9 +40,6 @@ namespace AlertaSantiagoApp.ViewModels
                 if (isRunning != value)
                 {
                     isRunning = value;
-                    /* if (PropertyChanged!=null) {
-                         PropertyChanged(this, new PropertyChangedEventArgs("IsRunning"));
-                     }*///es lo mismo que lo de abajo
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsRunning"));
                 }
             }
@@ -62,7 +59,7 @@ namespace AlertaSantiagoApp.ViewModels
             dataService = new DataService();
             apiService = new ApiService();
             netService = new NetService();
-            //IsRemembered = true;
+            IsRemembered = true;
 
         }
         #endregion
@@ -86,15 +83,15 @@ namespace AlertaSantiagoApp.ViewModels
 
             IsRunning = true;
             var response = new Response();//video 118 para logear ssin conexion.
-            //if (netService.IsConnected())
-            //{
-            //    response = await apiService.Login(User, Password);
-            //}
-            //else
-            //{
-            //    //response = dataService.Login(User, Password);
-            //}
-            response = await apiService.Login(User, Password);
+            if (netService.IsConnected())
+            {
+                response = await apiService.Login(User, Password);
+            }
+            else
+            {
+                response = dataService.Login(User, Password);
+            }
+            //response = await apiService.Login(User, Password);
             IsRunning = false;
 
             if (!response.IsSuccess)
@@ -106,7 +103,7 @@ namespace AlertaSantiagoApp.ViewModels
             user.IsRemembered = IsRemembered;
             user.Password = Password;
 
-            //dataService.InsertUser(user);
+            dataService.InsertUser(user);
 
             navigationService.SetMainPage();
         }

@@ -1,4 +1,5 @@
 ﻿//using AlertaSantiagoApp.Interfaces;
+using AlertaSantiagoApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace AlertaSantiagoApp.Services
 {
     public class NetService
     {
-        //public bool IsConnected()
-        //{
-        //    var networkConnection = DependencyService.Get<INetworkConnection>();
-        //    networkConnection.CheckNetworkConnection();
-        //    return networkConnection.IsConnected;
-        //}
+        public bool IsConnected()
+        {
+            var networkConnection = DependencyService.Get<INetworkConnection>();
+            networkConnection.CheckNetworkConnection();
+            return networkConnection.IsConnected;
+        }
     }
 }
