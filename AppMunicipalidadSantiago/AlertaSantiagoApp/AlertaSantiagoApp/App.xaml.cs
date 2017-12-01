@@ -14,7 +14,7 @@ namespace AlertaSantiagoApp
     public partial class App : Application
     {
         #region Attributes
-        public DataService dataService { get; set; }
+        public DataService dataService;
         #endregion
 
         #region Properties

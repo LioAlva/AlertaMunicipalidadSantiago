@@ -25,19 +25,22 @@ namespace AlertaSantiagoApp.Pages
             {
                 MyMap.Pins.Add(item);
             }
-           // Locator();
+            Locator();
         }
 
-        //private async void Locator()
-        //{
-        //    var locator = CrossGeolocator.Current;
-        //    locator.DesiredAccuracy = 50;
+        private async void Locator()
+        {
+            var locator = CrossGeolocator.Current;
 
-        //    //var location = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
-        //    var location = await locator.GetPositionAsync();
-        //    var position = new Position(location.Latitude, location.Longitude);
-        //    MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(.3)));
+            if (locator.IsGeolocationAvailable && locator.IsGeolocationEnabled) {
+                locator.DesiredAccuracy = 50;
 
-        //}
+                //var location = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+                var location = await locator.GetPositionAsync();
+                var position = new Position(location.Latitude, location.Longitude);
+                MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(.3)));
+            }
+
+        }
     }
 }

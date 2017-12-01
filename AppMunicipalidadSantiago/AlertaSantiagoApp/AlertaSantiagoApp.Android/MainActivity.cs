@@ -18,11 +18,18 @@ namespace AlertaSantiagoApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+            Xamarin.FormsMaps.Init(this, bundle);
             ButtonCircle.FormsPlugin.Droid.ButtonCircleRenderer.Init();//Button circle
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            Xamarin.FormsMaps.Init(this, bundle);
+          
             LoadApplication(new App());
         }
+
+        //public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        //{
+        //    PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        //}
+
     }
 }
 

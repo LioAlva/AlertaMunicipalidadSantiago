@@ -49,8 +49,6 @@ namespace AlertaSantiagoApp.Services
                 case "LogutPage":
                     Logout();
                     ; break;
-                default:
-                    break;
             }
         }
 

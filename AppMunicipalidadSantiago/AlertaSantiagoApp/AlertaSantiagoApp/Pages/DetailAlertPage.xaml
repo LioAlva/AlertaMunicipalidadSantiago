@@ -2,15 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlertaSantiagoApp.Pages.DetailAlertPage"
-            
-           
+             
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              BackgroundColor="{StaticResource BackgroundColor}"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}"             
+                       
              Title="Detail Alert">
 
-    
-    
+
+
     <!--<ScrollView
     BindingContext="{Binding DetailAlert}">
         <StackLayout
@@ -29,48 +28,19 @@
                               TextColor="{StaticResource VerduscoColor}"
                FontSize="15"></Label>
             </StackLayout>
-
-          --><!--Esto es par el mapa--><!--
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Latidud:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Latitud"
-          IsEnabled="false"
-          Text="{Binding Latitude, Mode=TwoWay}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
-                <Label
-          Text="Longitud:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Longitud"
-          IsEnabled="false"
-          Text="{Binding Longitude, Mode=TwoWay}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
-                <maps:Map 
+            <maps:Map 
                   WidthRequest="320" 
-                  HeightRequest="200"
+                  HeightRequest="300"
                   x:Name="MyMap"
                   IsShowingUser="true"
                   MapType="Hybrid">
-                </maps:Map>
-            </StackLayout>
+            </maps:Map>
+
+
             <StackLayout
         Orientation="Horizontal" >
                 <Label
-          Text="{Binding FullName}"
+          Text="{Binding TimeAlert}"
           TextColor="{StaticResource FontColor}"
           FontSize="20"
           FontAttributes="Bold"
@@ -78,22 +48,7 @@
           HorizontalOptions="CenterAndExpand">
                 </Label>
             </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Correo:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Correo"
-          Text="{Binding UserName, Mode=TwoWay}"
-          Keyboard="Email"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
-            </StackLayout>
+
             <StackLayout
         Orientation="Horizontal">
                 <Label
@@ -104,41 +59,12 @@
                 </Label>
                 <Entry
           Placeholder="Nombres"
-          Text="{Binding FirstName, Mode=TwoWay}"
+          Text="{Binding AddresExact, Mode=TwoWay}"
           VerticalOptions="Center"
           HorizontalOptions="FillAndExpand">
                 </Entry>
             </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Apellidos:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Apellidos"
-          Text="{Binding LastName, Mode=TwoWay}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
-            </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Teléfono:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                <Entry
-          Placeholder="Teléfono"
-          Text="{Binding Phone, Mode=TwoWay}"
-          VerticalOptions="Center"
-          HorizontalOptions="FillAndExpand">
-                </Entry>
-            </StackLayout>
+
             <StackLayout
         Orientation="Horizontal">
                 <Label
@@ -147,39 +73,16 @@
           VerticalOptions="Center"
           HorizontalOptions="Start">
                 </Label>
-                <Entry
-          Placeholder="Dirección"
-          Text="{Binding Address, Mode=TwoWay}"
+                <Editor
+        
+          Text="{Binding AddresExact, Mode=TwoWay}"
           VerticalOptions="Center"
           HorizontalOptions="FillAndExpand">
-                </Entry>
+                </Editor>
             </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Departamento:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-                --><!--USAMOS UN BINDABLE PIKER PORQ NECEITO USAR POR LO QUE QUEIRO DEL PROYECTO--><!--
-               
-            </StackLayout>
-            <StackLayout
-        Orientation="Horizontal">
-                <Label
-          Text="Ciudad:"
-          TextColor="{StaticResource FontColor}"
-          VerticalOptions="Center"
-          HorizontalOptions="Start">
-                </Label>
-      
-            </StackLayout>
-          
-      
-
         </StackLayout>
     </ScrollView>-->
+    
     <StackLayout BindingContext="{Binding DetailAlert}" >
         <Label Text="aaaa"></Label>
 

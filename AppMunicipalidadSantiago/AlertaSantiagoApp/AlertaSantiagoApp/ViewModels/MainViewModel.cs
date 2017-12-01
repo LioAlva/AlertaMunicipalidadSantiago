@@ -15,8 +15,8 @@ namespace AlertaSantiagoApp.ViewModels
     public class MainViewModel
     {
         #region Attribute
-        public DialogService dialogService { get; set; }
-        public NavigationService navigationService { get; set; }
+        public DialogService dialogService;
+        public NavigationService navigationService;
         #endregion
 
         #region Properties
@@ -29,7 +29,7 @@ namespace AlertaSantiagoApp.ViewModels
 
         public ObservableCollection<Pin> Pins { get; set; }
 
-        public DetailAlertViewModel detailAlert { get; set; }
+       // public DetailAlertViewModel DetailAlert { get; set; }
 
         
 
@@ -63,7 +63,7 @@ namespace AlertaSantiagoApp.ViewModels
             dialogService = new DialogService();
             navigationService = new NavigationService();
             Pins = new ObservableCollection<Pin>();
-            detailAlert = new DetailAlertViewModel();
+           // DetailAlert = new DetailAlertViewModel();
             LoadMenu();
             //Create Views
             NewLogin = new LoginViewModel();
