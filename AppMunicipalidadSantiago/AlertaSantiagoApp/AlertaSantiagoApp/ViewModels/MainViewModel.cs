@@ -29,6 +29,10 @@ namespace AlertaSantiagoApp.ViewModels
 
         public ObservableCollection<Pin> Pins { get; set; }
 
+        public DetailAlertViewModel detailAlert { get; set; }
+
+        
+
         //RegisteredCommand
         //public  NewLogin 
         #endregion
@@ -59,6 +63,7 @@ namespace AlertaSantiagoApp.ViewModels
             dialogService = new DialogService();
             navigationService = new NavigationService();
             Pins = new ObservableCollection<Pin>();
+            detailAlert = new DetailAlertViewModel();
             LoadMenu();
             //Create Views
             NewLogin = new LoginViewModel();
@@ -73,7 +78,34 @@ namespace AlertaSantiagoApp.ViewModels
         {
             var response =await dialogService.ShowMessageOnYesNo();
             if (response) {
-               await navigationService.Navigate("DetailAlertPage");
+
+                //var customerItemViewModel = new CustomerItemViewModel
+                //{
+                //    Address = Address,
+                //    City = City,
+                //    CityId = CityId,
+                //    CompanyCustomers = CompanyCustomers,
+                //    CustomerId = CustomerId,
+                //    Department = Department,
+                //    DepartmentId = DepartmentId,
+                //    FirstName = FirstName,
+                //    IsUpdated = IsUpdated,
+                //    LastName = LastName,
+                //    Latitude = Latitude,
+                //    Longitude = Longitude,
+                //    orders = orders,
+                //    phone = phone,
+                //    photo = photo,
+                //    sales = sales,
+                //    username = username
+                //};
+
+                var mainViewModel = MainViewModel.GetInstance();//obtenemos una instacia del mainview model por que a ella 
+                                                                //le tengo que establecer el usuario
+               // mainViewModel.SetCurrentCustomer(customerItemViewModel);
+
+
+                await navigationService.Navigate("DetailAlertPage");
             }
         }
 
@@ -83,18 +115,52 @@ namespace AlertaSantiagoApp.ViewModels
 
         #region Methods
 
-        public void SetGeolocation( string address, double latitude, double longitude)
+        // public void SetGeolocation( string address, double latitude, double longitude)
+        //{
+        // var position = new Position(latitude, longitude);
+        // var pin = new Pin
+        // {
+        //     Type = PinType.Place,
+        //     Position = position,
+        ////     Label = name,
+        //     Address = address
+        // };
+        // Pins.Add(pin);
+        //}
+        public void SetGeolocation()
         {
-            var position = new Position(latitude, longitude);
-            var pin = new Pin
+            var position1 = new Position(6.2652880, -75.5098530);
+            var pin1 = new Pin
             {
                 Type = PinType.Place,
-                Position = position,
-           //     Label = name,
-                Address = address
+                Position = position1,
+                Label = "Pin1",
+                Address = "prueba pin1"
             };
-            Pins.Add(pin);
+            Pins.Add(pin1);
+
+            var position2 = new Position(6.2652880, -75.4598530);
+            var pin2 = new Pin
+            {
+                Type = PinType.Place,
+                Position = position2,
+                Label = "Pin2",
+                Address = "prueba pin2"
+            };
+            Pins.Add(pin2);
+
+            var position3 = new Position(6.2652880, -75.4898530);
+            var pin3 = new Pin
+            {
+                Type = PinType.Place,
+                Position = position3,
+                Label = "Pin3",
+                Address = "prueba pin3"
+            };
+            Pins.Add(pin3);
         }
+
+
         public void LoadUser(User user)
         {
            // var user = dataService.GetUser();  //aca muere
@@ -143,6 +209,14 @@ namespace AlertaSantiagoApp.ViewModels
                 PageName = "LogutPage",
                 Title = "Cerrar Sesión"
             });
+
+            Menu.Add(new MenuItemViewModel
+            {
+                Icon = "ic_action_logut.png",
+                PageName = "DetailAlertPage",
+                Title = "Pagina MAPA"
+            });
+
         }
 
         #endregion

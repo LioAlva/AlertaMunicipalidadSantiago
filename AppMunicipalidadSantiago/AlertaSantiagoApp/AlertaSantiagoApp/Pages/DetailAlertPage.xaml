@@ -2,12 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlertaSantiagoApp.Pages.DetailAlertPage"
-             BackgroundColor="{StaticResource  WhiteColor}"
+            
+           
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             >
+             BackgroundColor="{StaticResource BackgroundColor}"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}"             
+             Title="Detail Alert">
 
-    <ScrollView
+    
+    
+    <!--<ScrollView
     BindingContext="{Binding DetailAlert}">
         <StackLayout
       Padding="10" Spacing="10">
@@ -26,7 +30,7 @@
                FontSize="15"></Label>
             </StackLayout>
 
-          <!--Esto es par el mapa-->
+          --><!--Esto es par el mapa--><!--
             <StackLayout
         Orientation="Horizontal">
                 <Label
@@ -158,7 +162,7 @@
           VerticalOptions="Center"
           HorizontalOptions="Start">
                 </Label>
-                <!--USAMOS UN BINDABLE PIKER PORQ NECEITO USAR POR LO QUE QUEIRO DEL PROYECTO-->
+                --><!--USAMOS UN BINDABLE PIKER PORQ NECEITO USAR POR LO QUE QUEIRO DEL PROYECTO--><!--
                
             </StackLayout>
             <StackLayout
@@ -175,6 +179,19 @@
       
 
         </StackLayout>
-    </ScrollView>
+    </ScrollView>-->
+    <StackLayout BindingContext="{Binding DetailAlert}" >
+        <Label Text="aaaa"></Label>
 
+        <maps:Map 
+                WidthRequest="320" 
+                HeightRequest="400"
+                x:Name="MyMap"
+                IsShowingUser="true"
+                MapType="Hybrid">
+        </maps:Map>
+
+
+    </StackLayout>
+    
 </ContentPage>

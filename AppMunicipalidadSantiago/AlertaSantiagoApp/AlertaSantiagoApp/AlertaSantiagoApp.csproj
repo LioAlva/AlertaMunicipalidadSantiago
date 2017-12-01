@@ -93,6 +93,7 @@
     <Compile Include="Services\NetService.cs" />
     <Compile Include="Utilities\AspectRatioLayout.cs" />
     <Compile Include="ViewModels\CustomerItemViewModel.cs" />
+    <Compile Include="ViewModels\DetailAlertViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuItemViewModel.cs" />

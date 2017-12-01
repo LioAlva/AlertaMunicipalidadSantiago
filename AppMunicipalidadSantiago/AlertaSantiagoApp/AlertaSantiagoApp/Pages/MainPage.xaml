@@ -4,6 +4,7 @@
              x:Class="AlertaSantiagoApp.Pages.MainPage"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"  
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+               xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              >
 
     <ScrollView Padding="15">
@@ -45,6 +46,8 @@
                    HorizontalOptions="Center"
                FontSize="15" ></Label>
             </StackLayout>
+            
+            
             
         </StackLayout>
     </ScrollView>
