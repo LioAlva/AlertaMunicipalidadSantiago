@@ -37,6 +37,9 @@ namespace AlertaSantiagoApp.Services
                 case "UserAlertPage":
                     await App.Navigator.PushAsync(new UserAlertPage());
                     ; break;
+                case "AlertPage":
+                    await App.Navigator.PushAsync(new AlertPage());
+                    ; break;
                 case "TermsPage":
                     await App.Navigator.PushAsync(new TermsPage());
                     ; break;

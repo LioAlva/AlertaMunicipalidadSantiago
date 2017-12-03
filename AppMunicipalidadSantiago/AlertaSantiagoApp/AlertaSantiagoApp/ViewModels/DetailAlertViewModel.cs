@@ -8,5 +8,9 @@ namespace AlertaSantiagoApp.ViewModels
 {
     public class DetailAlertViewModel
     {
+        #region Command
+
+        public int MyProperty { get; set; }
+        #endregion
     }
 }

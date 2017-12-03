@@ -22,20 +22,67 @@ namespace AlertaSantiagoApp.ViewModels
         #region Properties
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
 
-        public CustomerItemViewModel CurrentCustomer { get; set; }
+        //public CustomerItemViewModel CurrentCustomer { get; set; }
         public LoginViewModel NewLogin { get; set; }
 
         public UserViewModel UserLoged { get; set; }
 
         public ObservableCollection<Pin> Pins { get; set; }
 
-       // public DetailAlertViewModel DetailAlert { get; set; }
+        public AlertViewModel Alert { get; set; }
 
-        
+
+       public NewAlertViewModel NewAlert { get; set; }
 
         //RegisteredCommand
         //public  NewLogin 
         #endregion
+
+
+            
+
+        //#region Commands
+        //public ICommand AlertCommand { get { return new RelayCommand(NAlert); } }
+
+        //private async void NAlert()
+        //{
+        //    //var response =await dialogService.ShowMessageOnYesNo();
+        //    //if (response) {
+
+        //    //var customerItemViewModel = new CustomerItemViewModel
+        //    //{
+        //    //    Address = Address,
+        //    //    City = City,
+        //    //    CityId = CityId,
+        //    //    CompanyCustomers = CompanyCustomers,
+        //    //    CustomerId = CustomerId,
+        //    //    Department = Department,
+        //    //    DepartmentId = DepartmentId,
+        //    //    FirstName = FirstName,
+        //    //    IsUpdated = IsUpdated,
+        //    //    LastName = LastName,
+        //    //    Latitude = Latitude,
+        //    //    Longitude = Longitude,
+        //    //    orders = orders,
+        //    //    phone = phone,
+        //    //    photo = photo,
+        //    //    sales = sales,
+        //    //    username = username
+        //    //    //};
+
+        //    //    var mainViewModel = MainViewModel.GetInstance();//obtenemos una instacia del mainview model por que a ella 
+        //    //                                                    //le tengo que establecer el usuario
+        //    //   // mainViewModel.SetCurrentCustomer(customerItemViewModel);
+
+
+        //    //    await navigationService.Navigate("DetailAlertPage");
+        //    //}
+        //    await navigationService.Navigate("AlertPage");
+        //}
+
+
+
+        //#endregion
 
         #region Singleton
 
@@ -43,6 +90,7 @@ namespace AlertaSantiagoApp.ViewModels
 
         public static MainViewModel GetInstance()
         {
+            
             if (instance == null)
             {
                 instance = new MainViewModel();
@@ -63,55 +111,18 @@ namespace AlertaSantiagoApp.ViewModels
             dialogService = new DialogService();
             navigationService = new NavigationService();
             Pins = new ObservableCollection<Pin>();
-           // DetailAlert = new DetailAlertViewModel();
+            Alert = new AlertViewModel();
+            NewAlert = new NewAlertViewModel();
             LoadMenu();
             //Create Views
             NewLogin = new LoginViewModel();
         }
         #endregion
 
-
-        #region Commands
-        public ICommand AlertCommand { get { return new RelayCommand(Alert); } }
-
-        private async void Alert()
-        {
-            var response =await dialogService.ShowMessageOnYesNo();
-            if (response) {
-
-                //var customerItemViewModel = new CustomerItemViewModel
-                //{
-                //    Address = Address,
-                //    City = City,
-                //    CityId = CityId,
-                //    CompanyCustomers = CompanyCustomers,
-                //    CustomerId = CustomerId,
-                //    Department = Department,
-                //    DepartmentId = DepartmentId,
-                //    FirstName = FirstName,
-                //    IsUpdated = IsUpdated,
-                //    LastName = LastName,
-                //    Latitude = Latitude,
-                //    Longitude = Longitude,
-                //    orders = orders,
-                //    phone = phone,
-                //    photo = photo,
-                //    sales = sales,
-                //    username = username
-                //};
-
-                var mainViewModel = MainViewModel.GetInstance();//obtenemos una instacia del mainview model por que a ella 
-                                                                //le tengo que establecer el usuario
-               // mainViewModel.SetCurrentCustomer(customerItemViewModel);
-
-
-                await navigationService.Navigate("DetailAlertPage");
-            }
-        }
-
-
-
-        #endregion
+        //public void Holas(string mestre)
+        //{
+        //    Alert.Hola = mestre;
+        //}
 
         #region Methods
 
@@ -163,14 +174,14 @@ namespace AlertaSantiagoApp.ViewModels
 
         public void LoadUser(User user)
         {
-           // var user = dataService.GetUser();  //aca muere
+            // var user = dataService.GetUser();  //aca muere
             //alinicio en nuevo cell sale error porque no hay usuario y asignas user null a fullname y photofullpth
             if (user != null)
             {
                 UserLoged.FullName = user.FullName;
                 //112 ahora mostramos la photo
                 UserLoged.Photo = user.PhotoFullPath;
-              
+                Alert.Hola = "Que talmirame";
             }
         }
         private void LoadMenu()

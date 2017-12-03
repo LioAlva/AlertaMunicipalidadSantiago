@@ -4,12 +4,12 @@
              x:Class="AlertaSantiagoApp.Pages.MainPage"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"  
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-               xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              >
 
-    <ScrollView Padding="15">
+    <ScrollView Padding="15"
+               BindingContext="{Binding Alert}">
         <StackLayout >
-            <StackLayout Padding="17" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="17" HorizontalOptions="CenterAndExpand"  >
                 <Label Text="Municipalidad de Santiago"
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"
@@ -17,6 +17,11 @@
                    HorizontalOptions="CenterAndExpand"
                FontSize="25"></Label>
                 <Label Text="Presione el Botón rojo para enviar una alerta"
+               VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+               FontSize="15"></Label>
+                <Label Text="{Binding Hola, Mode=TwoWay}"
+                       TextColor="BlueViolet"
                VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand"
                FontSize="15"></Label>
