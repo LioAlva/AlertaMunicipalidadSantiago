@@ -20,6 +20,7 @@ namespace AlertaSantiagoApp.Droid
             base.OnCreate(bundle);
             ButtonCircle.FormsPlugin.Droid.ButtonCircleRenderer.Init();//Button circle
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            Xamarin.FormsMaps.Init(this, bundle);
             LoadApplication(new App());
         }
     }
