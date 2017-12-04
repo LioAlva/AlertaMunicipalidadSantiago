@@ -1,18 +1,29 @@
 ﻿using AlertaSantiagoApp.Models;
+using AlertaSantiagoApp.Services;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms.Maps;
 
 namespace AlertaSantiagoApp.ViewModels
 {
     public class MainViewModel
     {
+
+        #region Attributes
+        public DialogService dialogService;
+        public NavigationService navigationService;
+
+        #endregion
         #region Properties
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
+
+       // public ObservableCollection<Emergency> Emergencys { get; set; }
 
         public LoginViewModel NewLogin { get; set; }
 
@@ -21,6 +32,8 @@ namespace AlertaSantiagoApp.ViewModels
         public ObservableCollection<Pin> Pins { get; set; }
 
         public ButtonAlertViewModel ViewButtonContext { get; set; }
+
+        public AlertItemViewModel Alert { get; set; }
 
         #endregion
 
@@ -46,14 +59,20 @@ namespace AlertaSantiagoApp.ViewModels
             instance = this;
 
             Menu = new ObservableCollection<MenuItemViewModel>();
+            Alert = new AlertItemViewModel();
             UserLoged = new UserViewModel();
             Pins = new ObservableCollection<Pin>();
+            dialogService = new DialogService();
+            navigationService = new NavigationService();
             ViewButtonContext = new ButtonAlertViewModel();
             LoadMenu();
             //Create Views
             NewLogin = new LoginViewModel();
         }
         #endregion
+
+
+
 
 
         #region Methods

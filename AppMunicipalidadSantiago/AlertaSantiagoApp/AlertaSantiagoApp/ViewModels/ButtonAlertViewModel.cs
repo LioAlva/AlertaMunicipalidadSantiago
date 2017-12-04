@@ -26,22 +26,24 @@ namespace AlertaSantiagoApp.ViewModels
         public ButtonAlertViewModel()
         {
             navigationService = new NavigationService();
+            dialogService = new DialogService();
         }
         #endregion
 
 
         #region Commands
-        
-        public ICommand NewAlertCommand { get { return new RelayCommand(NewAlert); } }
+
+        public ICommand NAlertCommand { get { return new RelayCommand(NewAlert); } }
 
         private async void NewAlert()
         {
             var result = await dialogService.ShowMessageYesAndNot("Confimación", "Estas seguro de enviar la Alerta");
-            if (result) {
-                await navigationService.Navigate("AlertPage");
+            if (result)
+            {
+                await navigationService.Navigate("AlertMainPage");
             }
         }
-        
+
         #endregion
 
     }

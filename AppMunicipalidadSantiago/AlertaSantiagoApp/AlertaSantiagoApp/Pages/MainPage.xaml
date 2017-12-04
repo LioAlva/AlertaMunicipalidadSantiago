@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="AlertaSantiagoApp.Pages.MainPage"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"  
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              >
 
     <ScrollView Padding="15"
-                BindingContext="ViewButtonContext"
+                BindingContext="{Binding ViewButtonContext}"
                 >
         <StackLayout >
             <StackLayout Padding="17" HorizontalOptions="CenterAndExpand">
@@ -23,22 +23,21 @@
                FontSize="15"></Label>
             </StackLayout>
 
-            <StackLayout
-    Padding="10" 
-    Spacing="5" HorizontalOptions="CenterAndExpand"
-            VerticalOptions="CenterAndExpand">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" AutomationId="*"
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
                          >
-                    <circularButton:CircleButton Text="Alerta"   
+
+                <circularButton:CircleButton 
+                          Text="Alerta"   
                           TextColor="{StaticResource WhiteColor}" 
-                          Command="NewAlertCommand "
+                          Command="{Binding NAlertCommand}"
                           FontSize="30" HeightRequest="220" 
                           BorderRadius="220" WidthRequest="220" 
-                          BorderThickness="5" BorderColor="Yellow" BackgroundColor="{StaticResource RedColor}" 
+                          BorderThickness="5" 
+                          BorderColor="Yellow"
+                          BackgroundColor="{StaticResource RedColor}" 
                       />
-
-                </StackLayout>
             </StackLayout>
+            
             <StackLayout HorizontalOptions="CenterAndExpand"
                      VerticalOptions="EndAndExpand">
                 <Label Text="Localizaremos tu ubicación y nos comunicaremos contigo inmediatamente"

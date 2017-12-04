@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="AlertaSantiagoApp.Pages.AlertMainPage"
+             xmlns:control="clr-namespace:AlertaSantiagoApp.Controls"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Pagina de Alerta"
+             >
+
+    <ScrollView 
+    BindingContext="{Binding Alert}">
+        <StackLayout>
+
+            <StackLayout>
+                <Label HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Text="Municipalidad de Santiago"
+                       FontSize="25" />
+
+                <Label HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Text="Nos Comunicamos contigo" 
+                       FontSize="20"/>
+
+            </StackLayout>
+
+            <StackLayout>
+                <maps:Map 
+                WidthRequest="320" 
+                HeightRequest="400"
+                x:Name="MyMap"
+                IsShowingUser="true"
+                MapType="Hybrid">
+                </maps:Map>
+
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand" >
+                <Label Text="Emergencia"></Label>
+                <control:BindablePicker
+          Title="Seleccione una Emergencia"
+          DisplayMemberPath="Name"
+          SelectedValuePath="EmergencyId"
+          ItemsSource="{Binding Emergencys}"
+          SelectedValue ="{Binding Path=EmergencyId, Mode=TwoWay}"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center">
+                </control:BindablePicker>
+
+
+            </StackLayout>
+
+
+
+            <StackLayout>
+                <Label Text="Dirección"></Label>
+                <Editor Text="llena el formulario" HeightRequest="15"
+                        WidthRequest="15"></Editor>
+
+
+            </StackLayout>
+
+
+
+
+            <StackLayout
+        Orientation="Horizontal">
+                <Button
+          Text="Guardar"
+          Command="{Binding NewCustomerCommand}"
+          VerticalOptions="Center"
+          HorizontalOptions="FillAndExpand">
+                </Button>
+                <Button
+          Text="Tomar Foto"
+          Command="{Binding TakePictureCommand}"
+          TextColor="{StaticResource BackgroundColor}"
+          BackgroundColor="Aqua"
+          VerticalOptions="Center"
+          HorizontalOptions="FillAndExpand">
+                </Button>
+            </StackLayout>
+
+        </StackLayout>
+        
+    </ScrollView>
+</ContentPage>
+
+

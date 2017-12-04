@@ -9,7 +9,7 @@
         <pages:MenuPage></pages:MenuPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="Navigator"  BackgroundColor="{StaticResource WhiteColor}">
+        <NavigationPage x:Name="Navigator">
             <x:Arguments>
                 <pages:MainPage>
                 </pages:MainPage>

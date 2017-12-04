@@ -14,7 +14,7 @@ namespace AlertaSantiagoApp.Services
         }
 
         public async Task<bool> ShowMessageYesAndNot(string title, string message)
-        {
+        {//DisplayAlert("Question","Do you want to reset the search-options?", "Yes", "No");
             var result = await App.Current.MainPage.DisplayAlert(title, message, "Si", "No");
 
             return result;

@@ -51,8 +51,8 @@
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\ResponseLogin.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Pages\AlertPage.xaml.cs">
-      <DependentUpon>AlertPage.xaml</DependentUpon>
+    <Compile Include="Pages\AlertMainPage.xaml.cs">
+      <DependentUpon>AlertMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
@@ -227,10 +227,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Pages\AlertPage.xaml">
+    <EmbeddedResource Include="Pages\AlertMainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

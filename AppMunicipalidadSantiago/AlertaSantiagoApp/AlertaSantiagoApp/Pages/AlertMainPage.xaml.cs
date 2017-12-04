@@ -1,24 +1,19 @@
-﻿using AlertaSantiagoApp.ViewModels;
-using Plugin.Geolocator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
+using AlertaSantiagoApp.ViewModels;
+using Plugin.Geolocator;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
 namespace AlertaSantiagoApp.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AlertPage : ContentPage
-    {
-        public AlertPage()
-        {
-            InitializeComponent();
-
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class AlertMainPage : ContentPage
+	{
+		public AlertMainPage ()
+		{
+			InitializeComponent ();
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.SetGeolocation(
                 //mainViewModel.CurrentCustomer.FullName,
@@ -43,6 +38,6 @@ namespace AlertaSantiagoApp.Pages
             var position = new Position(location.Latitude, location.Longitude);
             MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(.3)));
 
-        } 
+        }
     }
 }
