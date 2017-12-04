@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AlertaSantiagoApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class AlertPage : ContentPage
     {
-        public MainPage()
+        public AlertPage()
         {
             InitializeComponent();
         }
