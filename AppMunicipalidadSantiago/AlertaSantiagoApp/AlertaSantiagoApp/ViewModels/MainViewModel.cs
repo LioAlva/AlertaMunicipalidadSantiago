@@ -19,6 +19,9 @@ namespace AlertaSantiagoApp.ViewModels
         public UserViewModel UserLoged { get; set; }
         //public  NewLogin 
         public ObservableCollection<Pin> Pins { get; set; }
+
+        public ButtonAlertViewModel ViewButtonContext { get; set; }
+
         #endregion
 
         #region Singleton
@@ -45,6 +48,7 @@ namespace AlertaSantiagoApp.ViewModels
             Menu = new ObservableCollection<MenuItemViewModel>();
             UserLoged = new UserViewModel();
             Pins = new ObservableCollection<Pin>();
+            ViewButtonContext = new ButtonAlertViewModel();
             LoadMenu();
             //Create Views
             NewLogin = new LoginViewModel();

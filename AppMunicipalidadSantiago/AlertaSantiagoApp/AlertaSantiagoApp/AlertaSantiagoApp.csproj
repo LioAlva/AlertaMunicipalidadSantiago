@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BindablePicker.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Infrastructure\InstanceLocator.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
@@ -45,10 +46,14 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Emergency.cs" />
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\ResponseLogin.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\AlertPage.xaml.cs">
+      <DependentUpon>AlertPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
     </Compile>
@@ -86,6 +91,9 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\NetService.cs" />
     <Compile Include="Utilities\AspectRatioLayout.cs" />
+    <Compile Include="ViewModels\AlertItemViewModel.cs" />
+    <Compile Include="ViewModels\ButtonAlertViewModel.cs" />
+    <Compile Include="ViewModels\EmergencyItemViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuItemViewModel.cs" />
@@ -217,6 +225,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Pages\AlertPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

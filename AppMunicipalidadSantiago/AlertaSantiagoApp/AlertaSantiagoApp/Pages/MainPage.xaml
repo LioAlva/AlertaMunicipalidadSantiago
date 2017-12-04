@@ -6,7 +6,9 @@
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"  
              >
 
-    <ScrollView Padding="15">
+    <ScrollView Padding="15"
+                BindingContext="ViewButtonContext"
+                >
         <StackLayout >
             <StackLayout Padding="17" HorizontalOptions="CenterAndExpand">
                 <Label Text="Municipalidad de Santiago"
@@ -27,7 +29,10 @@
             VerticalOptions="CenterAndExpand">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" AutomationId="*"
                          >
-                    <circularButton:CircleButton Text="Alerta"   TextColor="{StaticResource WhiteColor}"  FontSize="30" HeightRequest="220" 
+                    <circularButton:CircleButton Text="Alerta"   
+                          TextColor="{StaticResource WhiteColor}" 
+                          Command="NewAlertCommand "
+                          FontSize="30" HeightRequest="220" 
                           BorderRadius="220" WidthRequest="220" 
                           BorderThickness="5" BorderColor="Yellow" BackgroundColor="{StaticResource RedColor}" 
                       />
@@ -46,13 +51,7 @@
             
         </StackLayout>
 
-        <maps:Map 
-                WidthRequest="320" 
-                HeightRequest="400"
-                x:Name="MyMap"
-                IsShowingUser="true"
-                MapType="Hybrid">
-        </maps:Map>
+
 
     </ScrollView>
     

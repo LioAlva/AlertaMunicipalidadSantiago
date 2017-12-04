@@ -12,5 +12,12 @@ namespace AlertaSantiagoApp.Services
         {
             await App.Current.MainPage.DisplayAlert(title, message, "Aceptar");
         }
+
+        public async Task<bool> ShowMessageYesAndNot(string title, string message)
+        {
+            var result = await App.Current.MainPage.DisplayAlert(title, message, "Si", "No");
+
+            return result;
+        }
     }
 }
